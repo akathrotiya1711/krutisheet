@@ -31,6 +31,7 @@ public class JavabadariController {
 		ModelAndView mav = new ModelAndView("javabadari");
 		mav.addObject("javabadari", new Javabadari());
 		mav.addObject("javabadariList", js.findAll());
+		System.out.println("dfsa");
 		return mav;
 	}
 
