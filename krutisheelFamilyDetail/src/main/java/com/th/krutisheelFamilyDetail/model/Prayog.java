@@ -9,17 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Society {
+public class Prayog {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	public Society() {
+	public Prayog() {
 		super();
 	}
 
-	public Society(int id, String name, List<Family> family) {
+	public Prayog(int id, String name, List<Family> family) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -43,7 +43,7 @@ public class Society {
 		return id;
 	}
 
-	public Society(String name) {
+	public Prayog(String name) {
 		super();
 		this.name = name;
 	}
