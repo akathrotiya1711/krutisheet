@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.th.krutisheelFamilyDetail.model.Exam;
-import com.th.krutisheelFamilyDetail.model.Family;
+import com.th.krutisheelFamilyDetail.model.Person;
 import com.th.krutisheelFamilyDetail.model.Society;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.FamilySerI;
@@ -139,18 +139,18 @@ public class MainController {
 	{
 		ModelAndView mv = new ModelAndView("family");
 		List<Exam>  examList = examService.findAllExam();
-		List<Family> familyList = family.findFamilyList();
-		mv.addObject("family", new Family());
+		List<Person> familyList = family.findFamilyList();
+		mv.addObject("family", new Person());
 		mv.addObject("examList",examList);
 		mv.addObject("familyList",familyList);
 		return mv;
 	}
 	
 	@PostMapping("/save-family")
-	public ModelAndView saveFamily(@ModelAttribute Family f) {
+	public ModelAndView saveFamily(@ModelAttribute Person f) {
 	    family.saveFamily(f);
 	    ModelAndView mv = new ModelAndView("family");
-	    mv.addObject("family",new Family());
+	    mv.addObject("family",new Person());
 	    return mv;
 	}
 

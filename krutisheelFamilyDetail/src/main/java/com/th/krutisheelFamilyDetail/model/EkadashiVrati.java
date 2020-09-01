@@ -18,9 +18,9 @@ public class EkadashiVrati {
 	private String name;
 	
 	@ManyToOne
-	private Family family;
+	private Person family;
 	
-	public EkadashiVrati(int id, String name, Family family) {
+	public EkadashiVrati(int id, String name, Person family) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,11 +47,11 @@ public class EkadashiVrati {
 		this.name = name;
 	}
 
-	public Family getFamily() {
+	public Person getFamily() {
 		return family;
 	}
 
-	public void setFamily(Family family) {
+	public void setFamily(Person family) {
 		this.family = family;
 	}
 	

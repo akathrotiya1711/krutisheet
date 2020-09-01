@@ -24,7 +24,7 @@ public class Exam {
 	private int exam_number;
 	
 	@OneToMany
-	private List<Family> family;
+	private List<Person> family;
 
 	public Integer getId() {
 		return id;
@@ -58,7 +58,7 @@ public class Exam {
 		super();
 	}
 
-	public Exam(int id, String name, Integer exam_number, List<Family> family) {
+	public Exam(int id, String name, Integer exam_number, List<Person> family) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -74,11 +74,11 @@ public class Exam {
 		this.exam_number = exam_number;
 	}
 
-	public List<Family> getFamily() {
+	public List<Person> getFamily() {
 		return family;
 	}
 
-	public void setFamily(List<Family> family) {
+	public void setFamily(List<Person> family) {
 		this.family = family;
 	}
 

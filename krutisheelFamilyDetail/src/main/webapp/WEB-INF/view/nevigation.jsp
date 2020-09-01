@@ -20,10 +20,10 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/exam">Exam</a>
-          <a class="dropdown-item" href="/javabadari/">Javabadarii</a>
+          <a class="dropdown-item" href="/javabadari/">Javabadari</a>
           <a class="dropdown-item" href="/ekadashiVrati/">Ekadashi Vrati</a>
-          <a class="dropdown-item" href="/prayog/">Prayog</a>
-          
+          <a class="dropdown-item" href="/prayog/">Prayog</a>karyVibhag
+          <a class="dropdown-item" href="/karyVibhag/">Kary Vibhag</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/society">Society</a>
            <a class="dropdown-item" href="/relation/">Relation</a>

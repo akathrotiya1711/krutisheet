@@ -20,9 +20,9 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Family {
+public class Person {
 
-	public Family(int id, String name, Exam e, Date dateOfBirth) {
+	public Person(int id, String name, Exam e, Date dateOfBirth) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -44,7 +44,7 @@ public class Family {
 		this.d = d;
 	}
 
-	public Family(int id, String name, Date d, Exam exam, Date dateOfBirth) {
+	public Person(int id, String name, Date d, Exam exam, Date dateOfBirth) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -97,7 +97,7 @@ public class Family {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public Family() {
+	public Person() {
 		super();
 	}
 	

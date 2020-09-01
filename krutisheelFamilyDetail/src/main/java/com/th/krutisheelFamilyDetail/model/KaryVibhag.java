@@ -9,41 +9,42 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Society {
+public class KaryVibhag {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+
+	private String name;
+
+	@OneToMany
+	private List<Person> person;
+
 	
-	public Society() {
+	public KaryVibhag() {
 		super();
 	}
 
-	public Society(int id, String name, List<Person> family) {
+	public KaryVibhag(int id, String name, List<Person> family) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.family = family;
+		this.person = family;
 	}
 
-	private String name;
-	
 	public List<Person> getFamily() {
-		return family;
+		return person;
 	}
 
 	public void setFamily(List<Person> family) {
-		this.family = family;
+		this.person = family;
 	}
-
-	@OneToMany
-	private List<Person> family;
 
 	public int getId() {
 		return id;
 	}
 
-	public Society(String name) {
+	public KaryVibhag(String name) {
 		super();
 		this.name = name;
 	}
@@ -59,11 +60,5 @@ public class Society {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	@Override
-	public String toString() {
-		return "Society [id=" + id + ", name=" + name + "]";
-	}
-
 	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.th.krutisheelFamilyDetail.model.Family;
+import com.th.krutisheelFamilyDetail.model.Person;
 import com.th.krutisheelFamilyDetail.repository.FamilyRepo;
 
 @Service
@@ -20,21 +20,21 @@ public class FamilySerIImpl implements FamilySerI {
 	}
 
 	@Override
-	public void saveFamily(Family f) {
+	public void saveFamily(Person f) {
 		fr.save(f);
 
 	}
 
 	@Override
-	public List<Family> findFamilyList() {
+	public List<Person> findFamilyList() {
 		// TODO Auto-generated method stub
-		return (List<Family>) fr.findAllWithDate();
+		return (List<Person>) fr.findAllWithDate();
 	}
 
 	@Override
-	public Family findFamilyById(int id) {
+	public Person findFamilyById(int id) {
 		// TODO Auto-generated method stub
-		return (Family) fr.findById(id).get();
+		return (Person) fr.findById(id).get();
 	}
 
 	@Override

@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.th.krutisheelFamilyDetail.model.Family;
+import com.th.krutisheelFamilyDetail.model.Person;
 import com.th.krutisheelFamilyDetail.model.Relation;
 
-public interface FamilyRepo extends CrudRepository<Family,Integer> {
+public interface FamilyRepo extends CrudRepository<Person,Integer> {
 	
 	@Query(value = "SELECT * FROM Family", nativeQuery = true)
-	  List<Family> findAllWithDate();
+	  List<Person> findAllWithDate();
 	
 }

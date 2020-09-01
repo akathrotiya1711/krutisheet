@@ -18,7 +18,7 @@ public class Javabadari {
 	private String name;
 
 	@ManyToMany
-	private List<Family> family;
+	private List<Person> family;
 
 	public int getId() {
 		return id;
@@ -36,11 +36,11 @@ public class Javabadari {
 		this.name = name;
 	}
 
-	public List<Family> getFamily() {
+	public List<Person> getFamily() {
 		return family;
 	}
 
-	public void setFamily(List<Family> family) {
+	public void setFamily(List<Person> family) {
 		this.family = family;
 	}
 
@@ -48,7 +48,7 @@ public class Javabadari {
 		super();
 	}
 
-	public Javabadari(int id, String name, List<Family> family) {
+	public Javabadari(int id, String name, List<Person> family) {
 		super();
 		this.id = id;
 		this.name = name;
