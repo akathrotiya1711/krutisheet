@@ -12,6 +12,6 @@ public interface KaryVibhagService {
 	
 	KaryVibhag findById(int id);
 	
-	void delete(int id);
+	boolean delete(int id);
 
 }

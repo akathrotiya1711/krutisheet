@@ -4,14 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,9 +17,8 @@ import com.th.krutisheelFamilyDetail.model.Exam;
 import com.th.krutisheelFamilyDetail.model.Person;
 import com.th.krutisheelFamilyDetail.model.Society;
 import com.th.krutisheelFamilyDetail.service.ExamService;
-import com.th.krutisheelFamilyDetail.service.FamilySerI;
+import com.th.krutisheelFamilyDetail.service.FamilyHeadServiceIMPL;
 import com.th.krutisheelFamilyDetail.service.SocietyService;
-import com.th.krutisheelFamilyDetail.service.SocietyServiceImpl;
 
 @RestController
 public class MainController {
@@ -30,7 +27,7 @@ public class MainController {
 	private SocietyService society;
 	
 	@Autowired
-	private FamilySerI family;
+	private FamilyHeadServiceIMPL family;
 	
 	@Autowired
 	private ExamService examService;
@@ -134,24 +131,5 @@ public class MainController {
 	     return mav;
 	}
 	
-	@RequestMapping("/family")
-	public ModelAndView addFamily()
-	{
-		ModelAndView mv = new ModelAndView("family");
-		List<Exam>  examList = examService.findAllExam();
-		List<Person> familyList = family.findFamilyList();
-		mv.addObject("family", new Person());
-		mv.addObject("examList",examList);
-		mv.addObject("familyList",familyList);
-		return mv;
-	}
 	
-	@PostMapping("/save-family")
-	public ModelAndView saveFamily(@ModelAttribute Person f) {
-	    family.saveFamily(f);
-	    ModelAndView mv = new ModelAndView("family");
-	    mv.addObject("family",new Person());
-	    return mv;
-	}
-
 }

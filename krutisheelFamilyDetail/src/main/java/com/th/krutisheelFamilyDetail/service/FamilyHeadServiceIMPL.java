@@ -7,42 +7,42 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.th.krutisheelFamilyDetail.model.KaryVibhag;
-import com.th.krutisheelFamilyDetail.repository.KaryaVibhagRepo;
+import com.th.krutisheelFamilyDetail.model.FamilyHead;
+import com.th.krutisheelFamilyDetail.repository.FamilyHeadRepo;
 
 @Service
 @Transactional
-public class KaryVibhagIMPL implements KaryVibhagService {
+public class FamilyHeadServiceIMPL  implements FamilyHeadService{
 
 	@Autowired
-	private KaryaVibhagRepo repo;
+	private FamilyHeadRepo repo;
 	
 	@Override
-	public void save(KaryVibhag k) {
-		repo.save(k);
+	public void save(FamilyHead f) {
+		repo.save(f);
 	}
 
 	@Override
-	public List<KaryVibhag> findAll() {
+	public List<FamilyHead> findAll() {
+		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
-	public KaryVibhag findById(int id) {
+	public FamilyHead findById(int id) {
 		// TODO Auto-generated method stub
 		return repo.findById(id).get();
 	}
 
 	@Override
-	public boolean delete(int id) {
-		if(repo.existsById(id))
-		{
+	public boolean delet(int id) {
+
+		if(repo.existsById(id)) {
 			repo.deleteById(id);
 			return true;
 		}
-		else {
-			return false;
-		}
+		
+		return false;
 	}
 
 }

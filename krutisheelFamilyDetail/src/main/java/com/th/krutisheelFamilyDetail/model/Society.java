@@ -19,7 +19,7 @@ public class Society {
 		super();
 	}
 
-	public Society(int id, String name, List<Person> family) {
+	public Society(int id, String name, List<FamilyHead> family) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,17 +28,19 @@ public class Society {
 
 	private String name;
 	
-	public List<Person> getFamily() {
+
+	public List<FamilyHead> getFamily() {
 		return family;
 	}
 
-	public void setFamily(List<Person> family) {
+	public void setFamily(List<FamilyHead> family) {
 		this.family = family;
 	}
 
-	@OneToMany
-	private List<Person> family;
+	@OneToMany(mappedBy="society")
+	private List<FamilyHead> family;
 
+	
 	public int getId() {
 		return id;
 	}
