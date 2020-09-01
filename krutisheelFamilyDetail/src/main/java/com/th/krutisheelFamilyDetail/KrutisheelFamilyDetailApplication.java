@@ -17,6 +17,7 @@ public class KrutisheelFamilyDetailApplication extends SpringBootServletInitiali
 
 	public static void main(String[] args) {
 		SpringApplication.run(KrutisheelFamilyDetailApplication.class, args);
+	//System.out.println("s");
 	}
 
 }

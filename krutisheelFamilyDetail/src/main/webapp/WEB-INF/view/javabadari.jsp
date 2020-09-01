@@ -23,7 +23,7 @@
     	</div>
     <div class="col">
     	<c:if test="${javabadari.id>0}">
-    		<button type="button" class="btn btn-link"><a href="/javabadari/"> New Javabadari </a></button>
+    		<a href="/javabadari/"> <button type="button" class="btn btn-link">New Javabadari</button> </a>
     	</c:if> 
    	</div>
   </div>
