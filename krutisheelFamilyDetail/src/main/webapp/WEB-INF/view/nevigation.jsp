@@ -1,4 +1,3 @@
-
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -25,7 +24,7 @@
           <a class="dropdown-item" href="/ekadashiVrati/">Ekadashi Vrati</a>
           
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="/society">Society</a>
            <a class="dropdown-item" href="/relation/">Relation</a>
         </div>
       </li>

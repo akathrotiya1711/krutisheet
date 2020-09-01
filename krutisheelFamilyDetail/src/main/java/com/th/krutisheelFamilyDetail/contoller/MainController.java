@@ -20,13 +20,14 @@ import com.th.krutisheelFamilyDetail.model.Family;
 import com.th.krutisheelFamilyDetail.model.Society;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.FamilySerI;
+import com.th.krutisheelFamilyDetail.service.SocietyService;
 import com.th.krutisheelFamilyDetail.service.SocietyServiceImpl;
 
 @RestController
 public class MainController {
 	
 	@Autowired
-	private SocietyServiceImpl service;
+	private SocietyService society;
 	
 	@Autowired
 	private FamilySerI family;
@@ -56,19 +57,42 @@ public class MainController {
 	}
 	
 	@RequestMapping("/society")
-	public String welcome() {
-		return "society";
+	public ModelAndView welcome() {
+		ModelAndView mv = new ModelAndView("society");
+		mv.addObject("society", new Society());
+		mv.addObject("societyList", society.getSocietyList());
+		return mv;
+	
 	}
 	
-	@GetMapping("/getSocietyList")
-	public List<Society> getSocietyList(){
-		return service.getSocietyList();
+	@PostMapping("/society")
+	public ModelAndView getSocietyList(@ModelAttribute Society s){
+		society.saveSociety(s);
+		ModelAndView mv = new ModelAndView("society");
+		mv.addObject("society", new Society());
+		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("message", "Successfully");
+		return mv;
 	}
 	
-	@GetMapping("/getSociety/{id}")
-	public Society getSocietyNameById(@PathVariable int id) {
-		return service.getSociety(id);
+	@GetMapping("/society/{id}")
+	public ModelAndView getSocietyNameById(@PathVariable int id) {
+		ModelAndView mv = new ModelAndView("society");
+		mv.addObject("society", society.getSociety(id));
+		mv.addObject("societyList", society.getSocietyList());
+		return mv;
 	}
+	
+	@GetMapping("/society/delete/{id}")
+	public ModelAndView deleteSocietyNameById(@PathVariable int id) {
+		society.deleteSociety(id);
+		ModelAndView mv = new ModelAndView("society");
+		mv.addObject("society", new Society());
+		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("message", "Successfully Delete");
+		return mv;
+	}
+	
 	@InitBinder
 	public void initbinder(WebDataBinder binder){
 		

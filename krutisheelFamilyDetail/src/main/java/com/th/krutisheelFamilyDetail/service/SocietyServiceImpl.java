@@ -6,42 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.th.krutisheelFamilyDetail.dao.SocietyDAO;
 import com.th.krutisheelFamilyDetail.model.Society;
+import com.th.krutisheelFamilyDetail.repository.SocietyRepo;
 
 @Service
 public class SocietyServiceImpl implements SocietyService {
 
 	@Autowired
-	private SocietyDAO societyDAO;
+	private SocietyRepo repo;
 	
 	@Transactional
 	@Override
 	public List<Society> getSocietyList() {
 		// TODO Auto-generated method stub
 	
-		return societyDAO.getSocietyList();
+		return repo.findAll();
 	}
 
 	@Transactional
 	@Override
 	public Society getSociety(int id) {
 		// TODO Auto-generated method stub
-		return societyDAO.getSociety(id);
+		return repo.getOne(id);
 	}
 
 	@Transactional
 	@Override
 	public void saveSociety(Society society) {
-		// TODO Auto-generated method stub
+		repo.save(society);
 
 	}
 
 	@Transactional
 	@Override
 	public void deleteSociety(int id) {
-		// TODO Auto-generated method stub
-
+		repo.deleteById(id);
 	}
 
 }
