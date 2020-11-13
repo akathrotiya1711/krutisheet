@@ -62,13 +62,28 @@ public class JavabadariController {
 		mav.addObject("javabadari", js.getJavabadari(id));
 		return mav;
 	}
-	
-	@PostMapping("/serch/")
-	@ResponseBody
-	public  List<Javabadari> processAJAXRequest(@RequestBody AjexQueryName name) {
-          //  @RequestParam("name") String firstname )   {
-			System.out.println(name.getName());	
-		return js.serch();
+
+	@GetMapping("/serch")
+	public ModelAndView serchJavabadari(@RequestParam (name= "serch") String name ) {
+		System.out.println("1");
+		ModelAndView mav = new ModelAndView("javabadari");
+		System.out.println("2");
+		mav.addObject("javabadariList", js.serch(name));
+		System.out.println("1");
+		mav.addObject("javabadari", new Javabadari());
+		//mav.addObject("message", "successfully Delete");
+		return mav;
 	}
+	
+	
+	
+	
+	/*
+	 * @PostMapping("/serch/")
+	 * 
+	 * @ResponseBody public List<Javabadari> processAJAXRequest(@RequestBody
+	 * AjexQueryName name) { // @RequestParam("name") String firstname ) {
+	 * System.out.println(name.getName()); return js.serch(); }
+	 */
 	
 }

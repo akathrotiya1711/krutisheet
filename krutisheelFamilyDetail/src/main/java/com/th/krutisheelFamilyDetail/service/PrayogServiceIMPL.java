@@ -39,4 +39,10 @@ public class PrayogServiceIMPL implements PrayogService {
 	repo.deleteById(id);
 	}
 
+	@Override
+	public List<Prayog> serch(String name) {
+		// TODO Auto-generated method stub
+		return (List<Prayog>) repo.serch(name);
+	}
+
 }

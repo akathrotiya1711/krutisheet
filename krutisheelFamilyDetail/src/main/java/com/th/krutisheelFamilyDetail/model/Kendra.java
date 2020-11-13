@@ -1,17 +1,14 @@
 package com.th.krutisheelFamilyDetail.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 
 import com.th.krutisheelFamilyDetail.utility.Valida;
 
 @Entity
-public class Javabadari {
+public class Kendra {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -19,8 +16,6 @@ public class Javabadari {
 	
 	private String name;
 
-	@ManyToMany
-	private List<PersonXXX> family;
 
 	public int getId() {
 		return id;
@@ -35,7 +30,7 @@ public class Javabadari {
 	}
 
 	public void setName(String name) {
-		if(name != null  && name !="")
+		if(name.trim() != null  && name.trim() !="")
 		{
 		this.name = Valida.convertName(name);
 		}
@@ -45,23 +40,15 @@ public class Javabadari {
 		}
 	}
 
-	public List<PersonXXX> getFamily() {
-		return family;
-	}
 
-	public void setFamily(List<PersonXXX> family) {
-		this.family = family;
-	}
-
-	public Javabadari() {
+	public Kendra() {
 		super();
 	}
 
-	public Javabadari(int id, String name, List<PersonXXX> family) {
+	public Kendra(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.family = family;
 	}
 	
 	

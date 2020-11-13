@@ -15,30 +15,30 @@ import com.th.krutisheelFamilyDetail.repository.FamilyHeadRepo;
 public class FamilyHeadServiceIMPL  implements FamilyHeadService{
 
 	@Autowired
-	private FamilyHeadRepo repo;
+	private FamilyHeadRepo repo_familyHead;
 	
 	@Override
 	public void save(FamilyHead f) {
-		repo.save(f);
+		repo_familyHead.save(f);
 	}
 
 	@Override
 	public List<FamilyHead> findAll() {
 		// TODO Auto-generated method stub
-		return repo.findAll();
+		return repo_familyHead.findAll();
 	}
 
 	@Override
 	public FamilyHead findById(int id) {
 		// TODO Auto-generated method stub
-		return repo.findById(id).get();
+		return repo_familyHead.findById(id).get();
 	}
 
 	@Override
 	public boolean delet(int id) {
 
-		if(repo.existsById(id)) {
-			repo.deleteById(id);
+		if(repo_familyHead.existsById(id)) {
+			repo_familyHead.deleteById(id);
 			return true;
 		}
 		

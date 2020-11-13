@@ -47,11 +47,13 @@
             <button type="reset" class="btn btn-outline-secondary">Reset</button>
            </div>
            </div>
-</form:form>
-<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search"  id = "serch" placeholder="Search" aria-label="Search">
-     <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-    </form>
+</form:form >
+<!-- <form class="form-inline my-2 my-lg-0"> -->
+ <form:form id ="javabadariSerch" method="GET" action="/javabadari/serch" name="javabadariSerch" class="text-center border border-light p-5 form-inline my-2 my-lg-0">
+
+      <input class="form-control mr-sm-2" type="search"  id = "serch" name = "serch" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
+    </form:form >
 
 <%! int count = 1; %>
 <h3>javabadari List</h3>
@@ -72,16 +74,15 @@
    <tr>  
   <th scope="row" class="align-middle">  <%= count++ %></th>
    <td class="align-middle">${javabadari.name}</td>
-   <td><button type="button" class="btn btn-link"><a href = "/javabadari/${javabadari.id}">Edit</a></button></td>
-   <td><button type="button" class="btn btn-link"><a href = "/javabadari/delete/${javabadari.id}">Delete</a></button></td>  
-   </tr>
+   <td class="align-middle"><a href = "/javabadari/${javabadari.id}"><button type="button" class="btn btn-link">Edit</button></a></td>
+   <td class="align-middle"><a href = "/javabadari/delete/${javabadari.id}"><button type="button" class="btn btn-link">Delete</button></a></td>  
   
    </c:forEach>
  </table>
  </div>
 </div>
 <br/>
-
+<!--  
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#table1').DataTable({
@@ -154,5 +155,5 @@ $(document).ready(function(){
   });
 });
 </script> 
-
+-->
 <%@ include file = "footer.jsp" %>

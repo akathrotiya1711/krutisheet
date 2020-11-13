@@ -16,14 +16,28 @@
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Person
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/person/">New</a>
+         
+          <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="">blank</a>
+        </div>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/exam">Exam</a>
           <a class="dropdown-item" href="/javabadari/">Javabadari</a>
           <a class="dropdown-item" href="/ekadashiVrati/">Ekadashi Vrati</a>
-          <a class="dropdown-item" href="/prayog/">Prayog</a>karyVibhag
+          <a class="dropdown-item" href="/prayog/">Prayog</a>
           <a class="dropdown-item" href="/karyVibhag/">Kary Vibhag</a>
+          <a class="dropdown-item" href="/kendra/">Kendra</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/society">Society</a>
            <a class="dropdown-item" href="/relation/">Relation</a>

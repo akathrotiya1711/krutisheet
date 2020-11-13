@@ -15,34 +15,40 @@ import com.th.krutisheelFamilyDetail.repository.KaryaVibhagRepo;
 public class KaryVibhagIMPL implements KaryVibhagService {
 
 	@Autowired
-	private KaryaVibhagRepo repo;
+	private KaryaVibhagRepo kary_vibhag_repo_1;
 	
 	@Override
 	public void save(KaryVibhag k) {
-		repo.save(k);
+		kary_vibhag_repo_1.save(k);
 	}
 
 	@Override
 	public List<KaryVibhag> findAll() {
-		return repo.findAll();
+		return kary_vibhag_repo_1.findAll();
 	}
 
 	@Override
 	public KaryVibhag findById(int id) {
 		// TODO Auto-generated method stub
-		return repo.findById(id).get();
+		return kary_vibhag_repo_1.findById(id).get();
 	}
 
 	@Override
 	public boolean delete(int id) {
-		if(repo.existsById(id))
+		if(kary_vibhag_repo_1.existsById(id))
 		{
-			repo.deleteById(id);
+			kary_vibhag_repo_1.deleteById(id);
 			return true;
 		}
 		else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<KaryVibhag> serch(String name) {
+		// TODO Auto-generated method stub
+		return kary_vibhag_repo_1.serch(name);
 	}
 
 }

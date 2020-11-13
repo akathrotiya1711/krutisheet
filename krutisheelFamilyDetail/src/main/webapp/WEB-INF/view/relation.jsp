@@ -49,6 +49,11 @@
            </div>
 </form:form>
 
+<form:form id ="relationSerch" method="GET" action="/relation/serch" name="relationSerch" class="text-center border border-light p-5 form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search"  id = "serch" name = "serch" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
+    </form:form >
+
 <%! int count = 1; %>
 <h3 align ="center">Relation List</h3>
 <div class="row col-md-6"><!-- you can use column classes md-3,md-5 as per your table width -->

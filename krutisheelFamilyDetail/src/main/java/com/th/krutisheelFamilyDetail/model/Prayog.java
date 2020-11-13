@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.th.krutisheelFamilyDetail.utility.Valida;
+
 @Entity
 public class Prayog {
 	
@@ -19,7 +21,7 @@ public class Prayog {
 		super();
 	}
 
-	public Prayog(int id, String name, List<Person> family) {
+	public Prayog(int id, String name, List<PersonXXX> family) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,16 +30,27 @@ public class Prayog {
 
 	private String name;
 	
-	public List<Person> getFamily() {
+	@OneToMany(mappedBy="prayog")
+	private List<Person> person;
+	
+	public List<Person> getPerson() {
+		return person;
+	}
+
+	public void setPerson(List<Person> person) {
+		this.person = person;
+	}
+
+	public List<PersonXXX> getFamily() {
 		return family;
 	}
 
-	public void setFamily(List<Person> family) {
+	public void setFamily(List<PersonXXX> family) {
 		this.family = family;
 	}
 
 	@OneToMany
-	private List<Person> family;
+	private List<PersonXXX> family;
 
 	public int getId() {
 		return id;
@@ -57,7 +70,14 @@ public class Prayog {
 	}
 
 	public void setName(String name) {
+		if(name != null  && name !="")
+		{
+		this.name = Valida.convertName(name);
+		}
+		else 
+		{
 		this.name = name;
+		}
 	}
 
 	@Override

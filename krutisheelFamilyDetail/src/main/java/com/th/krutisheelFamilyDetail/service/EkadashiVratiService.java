@@ -14,4 +14,6 @@ public interface EkadashiVratiService {
 	
 	void delete(int id);
 	
+	List<EkadashiVrati> serch(String name);
+	
 }

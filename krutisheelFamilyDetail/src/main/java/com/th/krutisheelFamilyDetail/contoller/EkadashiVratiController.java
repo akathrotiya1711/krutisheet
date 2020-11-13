@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -55,5 +56,15 @@ public class EkadashiVratiController {
 		mav.addObject("message", "Successfully Delete");
 		return mav;
 	}
+	@GetMapping("/serch")
+	public ModelAndView serch(@RequestParam String serch){
+		//service.saveEkadashiVratiRepo(name);
+		ModelAndView mav = new ModelAndView("ekadashiVrati");
+		mav.addObject("ev", new EkadashiVrati());
+		mav.addObject("evlist", service.serch(serch));
+		//mav.addObject("message", "Successfully ");
+		return mav;
+	}
+
 
 }

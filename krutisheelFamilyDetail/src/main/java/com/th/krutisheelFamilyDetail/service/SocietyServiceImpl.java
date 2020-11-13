@@ -43,4 +43,10 @@ public class SocietyServiceImpl implements SocietyService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public List<Society> serch(String name) {
+		// TODO Auto-generated method stub
+		return repo.serch(name);
+	}
+
 }

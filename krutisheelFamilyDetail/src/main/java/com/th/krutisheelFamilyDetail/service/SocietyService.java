@@ -13,5 +13,8 @@ List<Society> getSocietyList();
 	void saveSociety(Society society);
 	
 	void deleteSociety(int id);
+	
+	List<Society> serch(String name);
+
 
 }

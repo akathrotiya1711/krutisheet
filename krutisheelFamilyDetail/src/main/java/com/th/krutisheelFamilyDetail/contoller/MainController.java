@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.th.krutisheelFamilyDetail.model.Exam;
-import com.th.krutisheelFamilyDetail.model.Person;
+import com.th.krutisheelFamilyDetail.model.PersonXXX;
 import com.th.krutisheelFamilyDetail.model.Society;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.FamilyHeadServiceIMPL;
@@ -58,6 +59,15 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("society");
 		mv.addObject("society", new Society());
 		mv.addObject("societyList", society.getSocietyList());
+		return mv;
+	
+	}
+	
+	@RequestMapping("/society/serch")
+	public ModelAndView societyserch(@RequestParam String serch) {
+		ModelAndView mv = new ModelAndView("society");
+		mv.addObject("society", new Society());
+		mv.addObject("societyList", society.serch(serch));
 		return mv;
 	
 	}

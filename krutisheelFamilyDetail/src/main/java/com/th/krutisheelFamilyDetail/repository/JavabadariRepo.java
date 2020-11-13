@@ -9,7 +9,7 @@ import com.th.krutisheelFamilyDetail.model.Javabadari;
 
 public interface JavabadariRepo extends JpaRepository<Javabadari, Integer> {
 
-	@Query(nativeQuery = true,value ="select * from Javabadari" )
-	List<Javabadari> serch();
+	@Query(nativeQuery = true,value ="select * from Javabadari j where j.name LIKE %:name%")
+	List<Javabadari> serch(String name);
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -60,6 +61,15 @@ public class PrayogController {
 	     mav.addObject("prayogList",list);
 	     mav.addObject("prayog", prayog);
 		 return mav;
+	}
+	
+	@GetMapping("/serch")
+	public ModelAndView serch(@RequestParam String serch){
+		ModelAndView mv = new ModelAndView("prayog");
+		List<Prayog>list = service.serch(serch);
+		mv.addObject("prayogList", list);
+		mv.addObject("prayog", new Prayog());
+		return mv;
 	}
 	
 }

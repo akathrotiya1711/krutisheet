@@ -51,6 +51,11 @@
            </div>
 </form:form>
 
+<form:form id ="prayogSerch" method="GET" action="/prayog/serch" name="prayogSerch" class="text-center border border-light p-5 form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search"  id = "serch" name = "serch" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
+    </form:form >
+
 <%! int count = 1; %>
 <h3>Prayog  List</h3>
 <div class="table-responsive">

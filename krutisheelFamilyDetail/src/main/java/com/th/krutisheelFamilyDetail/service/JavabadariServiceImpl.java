@@ -12,42 +12,42 @@ import com.th.krutisheelFamilyDetail.repository.JavabadariRepo;
 @Transactional
 public class JavabadariServiceImpl  implements JavabadariService{
 
-	private final JavabadariRepo js;
+	private final JavabadariRepo javabadari_repo;
 
 	
 	public JavabadariServiceImpl(JavabadariRepo js) {
 		super();
-		this.js = js;
+		this.javabadari_repo = js;
 	}
 
 	
 	@Override
 	public void saveJavabadari(Javabadari j) {
-		js.save(j);
+		javabadari_repo.save(j);
 	}
 
 	@Override
 	public List<Javabadari> findAll() {
 		
-		return (List<Javabadari>) js.findAll();
+		return (List<Javabadari>) javabadari_repo.findAll();
 	}
 
 	@Override
 	public void deleteJavabadari(int id) {
-		js.deleteById(id);
+		javabadari_repo.deleteById(id);
 		
 	}
 
 	@Override
 	public Javabadari getJavabadari(int id) {
 		// TODO Auto-generated method stub
-		return js.findById(id).get();
+		return javabadari_repo.findById(id).get();
 	}
 
 
 	@Override
-	public List<Javabadari> serch() {
+	public List<Javabadari> serch(String name) {
 		// TODO Auto-generated method stub
-		return js.serch();
+		return javabadari_repo.serch(name);
 	}
 }

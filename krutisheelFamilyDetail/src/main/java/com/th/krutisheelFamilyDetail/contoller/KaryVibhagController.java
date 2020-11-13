@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -60,6 +61,15 @@ public class KaryVibhagController {
 	     mav.addObject("karyVibhagList",list);
 	     mav.addObject("karyVibhag", karyVibhag);
 		 return mav;
+	}
+	
+	@GetMapping("/serch")
+	public ModelAndView karyVibhagSerch(@RequestParam String serch){
+		ModelAndView mv = new ModelAndView("karyVibhag");
+		List<KaryVibhag>list = service.serch(serch);
+		mv.addObject("karyVibhagList", list);
+		mv.addObject("karyVibhag", new KaryVibhag());
+		return mv;
 	}
 	
 }

@@ -42,4 +42,10 @@ public class RelationServiceIMPL implements  RelationService {
 		return relationRepo.findById(id).get();
 	}
 
+	@Override
+	public List<Relation> serch(String name) {
+		// TODO Auto-generated method stub
+		return relationRepo.serch(name);
+	}
+
 }

@@ -10,6 +10,8 @@ public interface KaryVibhagService {
 	
 	List<KaryVibhag> findAll();
 	
+	List<KaryVibhag> serch(String name);
+	
 	KaryVibhag findById(int id);
 	
 	boolean delete(int id);

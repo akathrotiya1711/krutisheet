@@ -10,10 +10,11 @@ public interface JavabadariService {
 	
 	List<Javabadari> findAll();
 	
-	List<Javabadari> serch();
+	List<Javabadari> serch(String name);
 	
 	void deleteJavabadari(int id);
 	
 	Javabadari getJavabadari(int id);
+	
 
 }

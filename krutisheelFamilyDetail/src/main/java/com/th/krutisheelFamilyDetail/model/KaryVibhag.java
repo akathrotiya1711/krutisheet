@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.th.krutisheelFamilyDetail.utility.Valida;
+
 @Entity
 public class KaryVibhag {
 	
@@ -18,26 +20,34 @@ public class KaryVibhag {
 	private String name;
 
 	@OneToMany
-	private List<Person> person;
-
+	private List<PersonXXX> person1;
 	
 	public KaryVibhag() {
 		super();
 	}
 
-	public KaryVibhag(int id, String name, List<Person> family) {
+	public KaryVibhag(int id, String name, List<PersonXXX> person1) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.person = family;
+		this.person1 = person1;
 	}
 
-	public List<Person> getFamily() {
-		return person;
+	public List<PersonXXX> getPerson1() {
+		return person1;
 	}
 
-	public void setFamily(List<Person> family) {
-		this.person = family;
+	public void setPerson1(List<PersonXXX> person1) {
+		this.person1 = person1;
+	}
+
+
+	public List<PersonXXX> getFamily() {
+		return person1;
+	}
+
+	public void setFamily(List<PersonXXX> family) {
+		this.person1 = family;
 	}
 
 	public int getId() {
@@ -58,7 +68,14 @@ public class KaryVibhag {
 	}
 
 	public void setName(String name) {
+		if(name != null  && name !="")
+		{
+		this.name = Valida.convertName(name);
+		}
+		else 
+		{
 		this.name = name;
+		}
 	}
 	
 }

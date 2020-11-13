@@ -13,5 +13,8 @@ public interface RelationService {
 	void deleteRelation(int id);
 	
 	Relation getRelation(int id);
+	
+	List<Relation> serch(String name);
+
 }
 

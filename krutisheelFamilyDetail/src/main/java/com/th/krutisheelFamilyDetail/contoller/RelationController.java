@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,6 +62,15 @@ public class RelationController {
 	     ModelAndView mav = new ModelAndView("relation");
 	     mav.addObject("relationList",list);
 	     mav.addObject("relation", relation);
+		 return mav;
+	}
+	
+	@GetMapping("/serch")
+	public ModelAndView serch(@RequestParam String serch) {
+	     List<Relation> list = service.serch(serch);
+	     ModelAndView mav = new ModelAndView("relation");
+	     mav.addObject("relationList",list);
+	     mav.addObject("relation", new Relation());
 		 return mav;
 	}
 	

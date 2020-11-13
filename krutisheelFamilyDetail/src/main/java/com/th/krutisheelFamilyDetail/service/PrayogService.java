@@ -13,5 +13,8 @@ public interface PrayogService {
 	Prayog getPrayog(int id);
 	
 	void delete(int id);
+	
+	List<Prayog> serch(String name);
+
 
 }

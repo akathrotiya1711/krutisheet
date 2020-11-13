@@ -14,17 +14,17 @@ import com.th.krutisheelFamilyDetail.repository.EkadashiVratiRepo;
 @Transactional
 public class EkadashiVratiRepoIMPL implements EkadashiVratiService {
 
-	private final EkadashiVratiRepo r;
+	private final EkadashiVratiRepo ekadashi_vrati_repo;
 	
 	 
 	public EkadashiVratiRepoIMPL(EkadashiVratiRepo r) {
-		this.r = r;
+		this.ekadashi_vrati_repo = r;
 	}
 
 
 	@Override
 	public void saveEkadashiVratiRepo(EkadashiVrati eka) {
-		r.save(eka);
+		ekadashi_vrati_repo.save(eka);
 		
 	}
 
@@ -32,21 +32,28 @@ public class EkadashiVratiRepoIMPL implements EkadashiVratiService {
 	@Override
 	public List<EkadashiVrati> get() {
 		// TODO Auto-generated method stub
-		return (List<EkadashiVrati>) r.findAll();
+		return (List<EkadashiVrati>) ekadashi_vrati_repo.findAll();
 	}
 
 
 	@Override
 	public EkadashiVrati get(int id) {
 		// TODO Auto-generated method stub
-		return r.findById(id).get();
+		return ekadashi_vrati_repo.findById(id).get();
 	}
 
 
 	@Override
 	public void delete(int id) {
-		r.deleteById(id);
+		ekadashi_vrati_repo.deleteById(id);
 		
+	}
+
+
+	@Override
+	public List<EkadashiVrati> serch(String name) {
+		// TODO Auto-generated method stub
+		return (List<EkadashiVrati>) ekadashi_vrati_repo.serch(name);
 	}
 
 
