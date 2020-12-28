@@ -44,13 +44,30 @@
     
            
            <form:hidden path="id"/>
-       <br/>
+       
+       
+       <div class = "row">
+      <div class="col">Vibhag
+    
+                     <c:forEach var = "vibhag" items="${vibhagList}">
+                     
+                      <form:radiobutton path = "vibhag" value = "${vibhag.id}" label = "${vibhag.name}" />
+                     </c:forEach>
+                  <%--    <form:options items = "${examList.name}" /> --%>
+                  
+                </div>
+           </div>
+       
      <div class = "row">
       <div class="col">
             <button type="submit" id = "submit1" class="btn btn-outline-primary">Submit</button>
             <button type="reset" class="btn btn-outline-secondary">Reset</button>
            </div>
            </div>
+            
+           
+     
+     <br/> 
 </form:form>
 
 
@@ -68,6 +85,7 @@
 	<tr>
  		<th scope = "col">Id</th>
  		<th scope = "col">Name</th>
+ 		<th scope = "col">Vibhag</th>
  		<th scope = "col">Edit</th>
  		<th scope = "col">Delete</th>
  	</thead>
@@ -77,6 +95,7 @@
    <tr>  
   <th scope="row" class ="text-center">  ${society.id}
    <td class="text-center">${society.name}</td>
+   <td class="text-center">${society.vibhag.name}</td>
    <td><a href = "/society/${society.id}"><button type="button" class="btn btn-link">Edit</button></a></td>
    <td><a href = "/society/delete/${society.id}"><button type="button" class="btn btn-link">Delete</button></a></td>  
    </tr>

@@ -20,7 +20,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/person/">New</a>
-         
+            <a class="dropdown-item" href="/person/viewPerson/">view</a>
           <div class="dropdown-divider"></div>
          <a class="dropdown-item" href="">blank</a>
         </div>
@@ -40,6 +40,7 @@
           <a class="dropdown-item" href="/kendra/">Kendra</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/society">Society</a>
+          <a class="dropdown-item" href="/vibhag/">Vibhag</a>
            <a class="dropdown-item" href="/relation/">Relation</a>
         </div>
       </li>

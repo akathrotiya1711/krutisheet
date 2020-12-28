@@ -47,6 +47,28 @@ public class Society {
 	@OneToMany(mappedBy="society")
 	private List<Person> person;
 	
+	public Society(int id, String name, List<FamilyHead> family, List<Person> person, Vibhag vibhag) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.family = family;
+		this.person = person;
+		this.vibhag = vibhag;
+	}
+
+	public void setVibhag(Vibhag vibhag) {
+		this.vibhag = vibhag;
+	}
+
+	@ManyToOne
+	private Vibhag vibhag ;
+
+	
+
+	public Vibhag getVibhag() {
+		return vibhag;
+	}
+
 	public int getId() {
 		return id;
 	}

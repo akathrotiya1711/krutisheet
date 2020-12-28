@@ -66,8 +66,20 @@
      <div class = "row">
       <div class="col">Society Name
      <form:select path = "society" multiple="false">
-                     <c:forEach var = "society" items="${societyList}">
-                     <form:option value = "${society.id}" label=" ${society.name}" /> 
+     
+                     <c:forEach var = "r" items="${societyList}">
+                     <form:option value = "${r.id}" label=" ${r.name}" /> 
+                     </c:forEach>
+                  <%--    <form:options items = "${examList.name}" /> --%>
+                  </form:select>
+                </div>
+           </div>
+     <br/> 
+     <div class = "row">
+      <div class="col">Relation 
+     <form:select path = "relation" multiple="false">
+                     <c:forEach var = "r" items="${relationList}">
+                     <form:option value = "${r.id}" label=" ${r.name}" /> 
                      </c:forEach>
                   <%--    <form:options items = "${examList.name}" /> --%>
                   </form:select>
@@ -82,13 +94,7 @@
      </div>
      <br/>
      
-     <div class = "row">
-      <div class="col">
-    		 Resident Vibhag<form:input path="resident_vibhag" id="resident_vibhag"  placeholder = "Resident Vibhag" />
-      </div>
-     </div>
-     <br/>
-     
+          
      <div class = "row">
       <div class="col">
     		 <form:input path="form_person_note" id="form_person_note"  placeholder = "Note" />
@@ -206,9 +212,10 @@
      
      <div class = "row">
       <div class="col">
-    	Karya Active <form:radiobutton path="karya_active" value= "Y" />Y
-    	      		 <form:radiobutton path="karya_active" value= "N" />N
-    	      		 <form:radiobutton path="karya_active" value= "I" />I
+    	Karya Active <form:radiobutton path="karya_active" value= "Yes" />Yes
+    	      		 <form:radiobutton path="karya_active" value= "No" />No
+    	      		 <form:radiobutton path="karya_active" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="karya_active" value= "Past" />Past
     	       
       </div>
      </div>
@@ -226,6 +233,7 @@
      <div class = "row">
       <div class="col">Last Exam 
      <form:select path = "last_exam" multiple="false">
+   
                      <c:forEach var = "r" items="${examList}">
                      <form:option value = "${r.id}" label=" ${r.name}" /> 
                      </c:forEach>
@@ -237,9 +245,11 @@
    
     <div class = "row">
       <div class="col">
-    	Bhavpheri <form:radiobutton path="bhavapheri" value= "Y" /> Y
-    	      		 <form:radiobutton path="bhavapheri" value= "N" /> N
-    	      		 <form:radiobutton path="bhavapheri" value= "I" /> I
+    	Bhavpheri 
+    	      		 <form:radiobutton path="bhavapheri" value= "Yes" />Yes
+    	      		 <form:radiobutton path="bhavapheri" value= "No" />No
+    	      		 <form:radiobutton path="bhavapheri" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="bhavapheri" value= "Past" />Past
     	       
       </div>
      </div>
@@ -249,6 +259,7 @@
     <div class = "row">
       <div class="col">Karya Vibhag 
      <form:select path = "karya_vibhag" multiple="false">
+    
                      <c:forEach var = "r" items="${karyaVibhagList}">
                      <form:option value = "${r.id}" label=" ${r.name}" /> 
                      </c:forEach>
@@ -274,9 +285,11 @@
    
     <div class = "row">
       <div class="col">
-    	Trikal Sandhya <form:radiobutton path="trikal_sandhya" value= "Y" /> Y
-    	      		 <form:radiobutton path="trikal_sandhya" value= "N" /> N
-    	      		 <form:radiobutton path="trikal_sandhya" value= "I" /> I
+    	Trikal Sandhya 
+    	      		<form:radiobutton path="trikal_sandhya" value= "Yes" />Yes
+    	      		 <form:radiobutton path="trikal_sandhya" value= "No" />No
+    	      		 <form:radiobutton path="trikal_sandhya" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="trikal_sandhya" value= "Past" />Past
     	       
       </div>
      </div>
@@ -285,9 +298,11 @@
    
     <div class = "row">
       <div class="col">
-    	Pratah Prathan <form:radiobutton path="pratah_prathana" value= "Y" /> Y
-    	      		 <form:radiobutton path="pratah_prathana" value= "N" /> N
-    	      		 <form:radiobutton path="pratah_prathana" value= "I" /> I
+    	Pratah Prathan 
+    	      		 <form:radiobutton path="pratah_prathana" value= "Yes" />Yes
+    	      		 <form:radiobutton path="pratah_prathana" value= "No" />No
+    	      		 <form:radiobutton path="pratah_prathana" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="pratah_prathana" value= "Past" />Past
     	       
       </div>
      </div>
@@ -295,9 +310,11 @@
    
     <div class = "row">
       <div class="col">
-    	Sayam Prathan <form:radiobutton path="sayam_prathana" value= "Y" /> Y
-    	      		 <form:radiobutton path="sayam_prathana" value= "N" /> N
-    	      		 <form:radiobutton path="sayam_prathana" value= "I" /> I
+    	Sayam Prathan 
+    	      		<form:radiobutton path="sayam_prathana" value= "Yes" />Yes
+    	      		 <form:radiobutton path="sayam_prathana" value= "No" />No
+    	      		 <form:radiobutton path="sayam_prathana" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="sayam_prathana" value= "Past" />Past
     	       
       </div>
      </div>
@@ -305,9 +322,11 @@
    
     <div class = "row">
       <div class="col">
-    	Pravachan <form:radiobutton path="pravachan" value= "Y" /> Y
-    	      		 <form:radiobutton path="pravachan" value= "N" /> N
-    	      		 <form:radiobutton path="pravachan" value= "I" /> I
+    	Pravachan  
+    	      		<form:radiobutton path="pravachan" value= "Yes" />Yes
+    	      		 <form:radiobutton path="pravachan" value= "No" />No
+    	      		 <form:radiobutton path="pravachan" value= "Irregular" />Irregular
+    	      		 <form:radiobutton path="pravachan" value= "Past" />Past
     	       
       </div>
      </div>
@@ -440,7 +459,7 @@
    <td class="align-middle">${person.form_person_last_name}</td>
    <td class="align-middle">${person.res_no}</td>
    <td class="align-middle">${person.society.name}</td>
-   <td class="align-middle">${person.resident_vibhag}</td>
+  	<td class="align-middle">${person.society.vibhag.name}</td>
    <td class="align-middle">${person.form_person_note}</td>
    <td class="align-middle"><a href = "/person/${person.id}"><button type="button" class="btn btn-link">Edit</button></a></td>
    <td class="align-middle"><a href = "/person/delete/${person.id}"><button type="button" class="btn btn-link">Delete</button></a></td>  

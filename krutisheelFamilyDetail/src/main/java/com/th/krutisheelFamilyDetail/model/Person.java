@@ -60,9 +60,9 @@ public class Person {
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 	
-    private int contect_number;
+    private String contect_number;
 	
-	private int contect_number_2;
+	private String contect_number_2;
 	
 	private String form_person_note;
 	
@@ -121,6 +121,68 @@ public class Person {
 	private int tirthayatra;
 	
 	private String karya_note;
+
+	public Person() {
+		super();
+	}
+
+	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
+			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
+			String gender, String education, String kshetradhar_name, String business, String business_time,
+			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth,
+			String contect_number, String contect_number_2, String form_person_note, String note, Date dateOfMarriage,
+			String karya_active, int since_karya, Javabadari karya_javabadari, String bhavapheri,
+			KaryVibhag karya_vibhag, Exam last_exam, String trikal_sandhya, String pratah_prathana,
+			String sayam_prathana, String pravachan, EkadashiVrati ekadashi, EkadashiVrati vrati, Prayog prayog,
+			int pujari_tarikh, int mnsgd_bhaktipheri, int other_bhaktipheri, int parprant_bhaktipheri, int tirthayatra,
+			String karya_note, String kendra) {
+		super();
+		this.id = id;
+		this.form_person_first_name = form_person_first_name;
+		this.form_person_middle_name = form_person_middle_name;
+		this.form_person_last_name = form_person_last_name;
+		this.form_person_full_name = form_person_full_name;
+		this.first_name = first_name;
+		this.middle_name = middle_name;
+		this.full_name = full_name;
+		this.relation = relation;
+		this.gender = gender;
+		this.education = education;
+		this.kshetradhar_name = kshetradhar_name;
+		this.business = business;
+		this.business_time = business_time;
+		this.res_no = res_no;
+		this.society = society;
+		this.form_number = form_number;
+		this.resident_vibhag = resident_vibhag;
+		this.dateOfBirth = dateOfBirth;
+		this.contect_number = contect_number;
+		this.contect_number_2 = contect_number_2;
+		this.form_person_note = form_person_note;
+		this.note = note;
+		this.dateOfMarriage = dateOfMarriage;
+		this.karya_active = karya_active;
+		this.since_karya = since_karya;
+		this.karya_javabadari = karya_javabadari;
+		this.bhavapheri = bhavapheri;
+		this.karya_vibhag = karya_vibhag;
+		this.last_exam = last_exam;
+		this.trikal_sandhya = trikal_sandhya;
+		this.pratah_prathana = pratah_prathana;
+		this.sayam_prathana = sayam_prathana;
+		this.pravachan = pravachan;
+		this.ekadashi = ekadashi;
+		this.vrati = vrati;
+		this.prayog = prayog;
+		this.pujari_tarikh = pujari_tarikh;
+		this.mnsgd_bhaktipheri = mnsgd_bhaktipheri;
+		this.other_bhaktipheri = other_bhaktipheri;
+		this.parprant_bhaktipheri = parprant_bhaktipheri;
+		this.tirthayatra = tirthayatra;
+		this.karya_note = karya_note;
+		this.kendra = kendra;
+	}
+
 	public int getMnsgd_bhaktipheri() {
 		return mnsgd_bhaktipheri;
 	}
@@ -201,53 +263,6 @@ public class Person {
 		this.ekadashi = ekadashiVrati;
 	}
 
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
-			String gender, String education, String kshetradhar_name, String business, String business_time,
-			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth, int contect_number,
-			int contect_number_2, String form_person_note, String note, Date dateOfMarriage, String karya_active,
-			int since_karya, Javabadari karya_javabadari, String bhavapheri, KaryVibhag karya_vibhag, Exam last_exam,
-			String trikal_sandhya, String pratah_prathana, String sayam_prathana, String pravachan,
-			EkadashiVrati ekadashiVrati, String kendra) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.first_name = first_name;
-		this.middle_name = middle_name;
-		this.full_name = full_name;
-		this.relation = relation;
-		this.gender = gender;
-		this.education = education;
-		this.kshetradhar_name = kshetradhar_name;
-		this.business = business;
-		this.business_time = business_time;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.dateOfBirth = dateOfBirth;
-		this.contect_number = contect_number;
-		this.contect_number_2 = contect_number_2;
-		this.form_person_note = form_person_note;
-		this.note = note;
-		this.dateOfMarriage = dateOfMarriage;
-		this.karya_active = karya_active;
-		this.since_karya = since_karya;
-		this.karya_javabadari = karya_javabadari;
-		this.bhavapheri = bhavapheri;
-		this.karya_vibhag = karya_vibhag;
-		this.last_exam = last_exam;
-		this.trikal_sandhya = trikal_sandhya;
-		this.pratah_prathana = pratah_prathana;
-		this.sayam_prathana = sayam_prathana;
-		this.pravachan = pravachan;
-		this.ekadashi = ekadashiVrati;
-		this.kendra = kendra;
-	}
-
 	public String getTrikal_sandhya() {
 		return trikal_sandhya;
 	}
@@ -256,51 +271,7 @@ public class Person {
 		this.trikal_sandhya = trikal_sandhya;
 	}
 
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
-			String gender, String education, String kshetradhar_name, String business, String business_time,
-			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth, int contect_number,
-			int contect_number_2, String form_person_note, String note, Date dateOfMarriage, String karya_active,
-			int since_karya, Javabadari karya_javabadari, String bhavapheri, KaryVibhag karya_vibhag, Exam last_exam,
-			String trikal_sandhya, String pratah_prathana, String sayam_prathana, String pravachan, String kendra) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.first_name = first_name;
-		this.middle_name = middle_name;
-		this.full_name = full_name;
-		this.relation = relation;
-		this.gender = gender;
-		this.education = education;
-		this.kshetradhar_name = kshetradhar_name;
-		this.business = business;
-		this.business_time = business_time;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.dateOfBirth = dateOfBirth;
-		this.contect_number = contect_number;
-		this.contect_number_2 = contect_number_2;
-		this.form_person_note = form_person_note;
-		this.note = note;
-		this.dateOfMarriage = dateOfMarriage;
-		this.karya_active = karya_active;
-		this.since_karya = since_karya;
-		this.karya_javabadari = karya_javabadari;
-		this.bhavapheri = bhavapheri;
-		this.karya_vibhag = karya_vibhag;
-		this.last_exam = last_exam;
-		this.trikal_sandhya = trikal_sandhya;
-		this.pratah_prathana = pratah_prathana;
-		this.sayam_prathana = sayam_prathana;
-		this.pravachan = pravachan;
-		this.kendra = kendra;
-	}
-
+	
 	public String getPratah_prathana() {
 		return pratah_prathana;
 	}
@@ -345,56 +316,10 @@ public class Person {
 
 	
 
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
-			String gender, String education, String kshetradhar_name, String business, String business_time,
-			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth, int contect_number,
-			int contect_number_2, String form_person_note, String note, Date dateOfMarriage, String karya_active,
-			int since_karya, Exam last_exam, String bhavapheri, KaryVibhag karya_vibhag, Javabadari karya_javabadari,
-			String kendra) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.first_name = first_name;
-		this.middle_name = middle_name;
-		this.full_name = full_name;
-		this.relation = relation;
-		this.gender = gender;
-		this.education = education;
-		this.kshetradhar_name = kshetradhar_name;
-		this.business = business;
-		this.business_time = business_time;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.dateOfBirth = dateOfBirth;
-		this.contect_number = contect_number;
-		this.contect_number_2 = contect_number_2;
-		this.form_person_note = form_person_note;
-		this.note = note;
-		this.dateOfMarriage = dateOfMarriage;
-		this.karya_active = karya_active;
-		this.since_karya = since_karya;
-		this.last_exam = last_exam;
-		this.bhavapheri = bhavapheri;
-		this.karya_vibhag = karya_vibhag;
-		this.karya_javabadari = karya_javabadari;
-		this.kendra = kendra;
-	}
-
-
-
-
+	
 	public void setKarya_vibhag(KaryVibhag karya_vibhag) {
 		this.karya_vibhag = karya_vibhag;
 	}
-
-
-
 
 	public void setKarya_active(String karya_active) {
 		this.karya_active = karya_active;
@@ -450,7 +375,7 @@ public class Person {
 	
 	
 	
-	public int getContect_number() {
+	public String getContect_number() {
 		return contect_number;
 	}
 
@@ -467,81 +392,20 @@ public class Person {
 		return dateOfMarriage;
 	}
 
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
-			String gender, String education, String kshetradhar_name, String business, String business_time,
-			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth, Date dateOfMarriage,
-			int contect_number, int contect_number_2, String form_person_note, String note) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.first_name = first_name;
-		this.middle_name = middle_name;
-		this.full_name = full_name;
-		this.relation = relation;
-		this.gender = gender;
-		this.education = education;
-		this.kshetradhar_name = kshetradhar_name;
-		this.business = business;
-		this.business_time = business_time;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.dateOfBirth = dateOfBirth;
-		this.dateOfMarriage = dateOfMarriage;
-		this.contect_number = contect_number;
-		this.contect_number_2 = contect_number_2;
-		this.form_person_note = form_person_note;
-		this.note = note;
-	}
-
 	public void setDateOfMarriage(Date dateOfMarriage) {
 		this.dateOfMarriage = dateOfMarriage;
 	}
 
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
-			String gender, String education, String kshetradhar_name, String business, String business_time,
-			String res_no, Society society, int form_number, int resident_vibhag, int contect_number,
-			int contect_number_2, String form_person_note, String note) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.first_name = first_name;
-		this.middle_name = middle_name;
-		this.full_name = full_name;
-		this.relation = relation;
-		this.gender = gender;
-		this.education = education;
-		this.kshetradhar_name = kshetradhar_name;
-		this.business = business;
-		this.business_time = business_time;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.contect_number = contect_number;
-		this.contect_number_2 = contect_number_2;
-		this.form_person_note = form_person_note;
-		this.note = note;
-	}
 
-	public void setContect_number(int contect_number) {
+	public void setContect_number(String contect_number) {
 		this.contect_number = contect_number;
 	}
 
-	public int getContect_number_2() {
+	public String getContect_number_2() {
 		return contect_number_2;
 	}
 
-	public void setContect_number_2(int contect_number_2) {
+	public void setContect_number_2(String contect_number_2) {
 		this.contect_number_2 = contect_number_2;
 	}
 
@@ -679,9 +543,7 @@ public class Person {
 		this.form_person_note = form_person_note;
 	}
 
-	public Person() {
-		super();
-	}
+	
 
 	public int getForm_number() {
 		return form_number;
@@ -693,24 +555,6 @@ public class Person {
 
 	public int getResident_vibhag() {
 		return resident_vibhag;
-	}
-
-	
-
-	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
-			String form_person_full_name, String res_no, Society society, int form_number, int resident_vibhag,
-			String form_person_note) {
-		super();
-		this.id = id;
-		this.form_person_first_name = form_person_first_name;
-		this.form_person_middle_name = form_person_middle_name;
-		this.form_person_last_name = form_person_last_name;
-		this.form_person_full_name = form_person_full_name;
-		this.res_no = res_no;
-		this.society = society;
-		this.form_number = form_number;
-		this.resident_vibhag = resident_vibhag;
-		this.form_person_note = form_person_note;
 	}
 
 	public void setResident_vibhag(int resident_vibhag) {

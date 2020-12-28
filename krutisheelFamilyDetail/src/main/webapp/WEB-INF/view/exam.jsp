@@ -65,6 +65,7 @@
 	<tr>
  		<th scope = "col">Number</th>
  		<th scope = "col">Name</th>
+ 		<th scope = "col">Exam_no.</th>
  		<th scope = "col">Edit</th>
  		<th scope = "col">Delete</th>
  	</thead>

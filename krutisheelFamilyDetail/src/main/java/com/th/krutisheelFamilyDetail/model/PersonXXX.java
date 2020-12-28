@@ -4,10 +4,7 @@ package com.th.krutisheelFamilyDetail.model;
 
 
 
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

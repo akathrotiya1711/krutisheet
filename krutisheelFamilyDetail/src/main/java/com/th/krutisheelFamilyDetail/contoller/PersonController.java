@@ -70,6 +70,12 @@ public class PersonController {
 		ModelAndView mav = new ModelAndView("person");
 		mav.addObject("person", new Person());
 		mav.addObject("societyList", society.getSocietyList());
+		mav.addObject("relationList", relation.findAllRelations());
+		mav.addObject("examList", exam.findAllExam());
+		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
+		mav.addObject("evlist", ekadashiVratservice.get());
+		mav.addObject("javabadariList", javabadariService.findAll());
+		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("personList", service.findAll());
 		mav.addObject("message", "Added Successfully");
 		return mav;
@@ -80,6 +86,12 @@ public class PersonController {
 		service.deletePersonById(id);
 		ModelAndView mav = new ModelAndView("person");
 		mav.addObject("societyList", society.getSocietyList());
+		mav.addObject("relationList", relation.findAllRelations());
+		mav.addObject("examList", exam.findAllExam());
+		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
+		mav.addObject("evlist", ekadashiVratservice.get());
+		mav.addObject("javabadariList", javabadariService.findAll());
+		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("person", new Person());
 		mav.addObject("personList", service.findAll());
 	    mav.addObject("message", "Successfully Delete");
@@ -91,7 +103,21 @@ public class PersonController {
 		Person person = service.getPersonById(id);
 		ModelAndView mav = new ModelAndView("person");
 		mav.addObject("societyList", society.getSocietyList());
+		mav.addObject("relationList", relation.findAllRelations());
+		mav.addObject("examList", exam.findAllExam());
+		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
+		mav.addObject("evlist", ekadashiVratservice.get());
+		mav.addObject("javabadariList", javabadariService.findAll());
+		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("person", person);
+		mav.addObject("personList", service.findAll());
+		return mav;
+	}
+	
+	
+	@GetMapping("/viewPerson/")
+	public ModelAndView viewPerson() {
+		ModelAndView mav = new ModelAndView("viewPerson");
 		mav.addObject("personList", service.findAll());
 		return mav;
 	}

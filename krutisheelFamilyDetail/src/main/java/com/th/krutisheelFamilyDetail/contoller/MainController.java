@@ -20,6 +20,7 @@ import com.th.krutisheelFamilyDetail.model.Society;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.FamilyHeadServiceIMPL;
 import com.th.krutisheelFamilyDetail.service.SocietyService;
+import com.th.krutisheelFamilyDetail.service.VibhagService;
 
 @RestController
 public class MainController {
@@ -32,6 +33,9 @@ public class MainController {
 	
 	@Autowired
 	private ExamService examService;
+	
+	@Autowired
+	private VibhagService vibhagservice;
 	
 	 
 	@RequestMapping("/home")
@@ -59,6 +63,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("society");
 		mv.addObject("society", new Society());
 		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("vibhagList", vibhagservice.findAllVibhags());
 		return mv;
 	
 	}
@@ -78,6 +83,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("society");
 		mv.addObject("society", new Society());
 		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("vibhagList", vibhagservice.findAllVibhags());
 		mv.addObject("message", "Successfully");
 		return mv;
 	}
@@ -87,6 +93,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("society");
 		mv.addObject("society", society.getSociety(id));
 		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("vibhagList", vibhagservice.findAllVibhags());
 		return mv;
 	}
 	
@@ -96,6 +103,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("society");
 		mv.addObject("society", new Society());
 		mv.addObject("societyList", society.getSocietyList());
+		mv.addObject("vibhagList", vibhagservice.findAllVibhags());
 		mv.addObject("message", "Successfully Delete");
 		return mv;
 	}
