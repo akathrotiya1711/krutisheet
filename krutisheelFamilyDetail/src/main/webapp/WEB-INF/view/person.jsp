@@ -75,17 +75,7 @@
                 </div>
            </div>
      <br/> 
-     <div class = "row">
-      <div class="col">Relation 
-     <form:select path = "relation" multiple="false">
-                     <c:forEach var = "r" items="${relationList}">
-                     <form:option value = "${r.id}" label=" ${r.name}" /> 
-                     </c:forEach>
-                  <%--    <form:options items = "${examList.name}" /> --%>
-                  </form:select>
-                </div>
-           </div>
-     <br/> 
+     
      
      <div class = "row">
       <div class="col">
@@ -149,6 +139,18 @@
       </div>
      </div>
      <br/>
+     
+     <div class = "row">
+      <div class="col">Age Group 
+     <form:select path = "age_group" multiple="false">
+                     <c:forEach var = "r" items="${ageGroupList}">
+                     <form:option value = "${r.id}" label=" ${r.name}" /> 
+                     </c:forEach>
+                  <%--    <form:options items = "${examList.name}" /> --%>
+                  </form:select>
+                </div>
+           </div>
+     <br/> 
      
       <div class = "row">
       <div class="col">

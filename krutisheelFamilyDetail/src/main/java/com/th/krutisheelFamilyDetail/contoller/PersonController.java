@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.th.krutisheelFamilyDetail.model.Person;
+import com.th.krutisheelFamilyDetail.service.AgeGroupService;
 import com.th.krutisheelFamilyDetail.service.EkadashiVratiService;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.JavabadariService;
@@ -47,6 +48,9 @@ public class PersonController {
 	@Autowired
 	private PrayogService prayogservice;
 	
+	@Autowired
+	private AgeGroupService ageservice;
+	
 	@GetMapping("/")
 	public ModelAndView newPerson() {
 		ModelAndView mav = new ModelAndView("person");
@@ -57,6 +61,7 @@ public class PersonController {
 		mav.addObject("evlist", ekadashiVratservice.get());
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
+		mav.addObject("ageGroupList", ageservice.getAllName());
 		mav.addObject("person", new Person());
 		mav.addObject("personList", service.findAll());
 		return mav;
@@ -74,6 +79,7 @@ public class PersonController {
 		mav.addObject("examList", exam.findAllExam());
 		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
 		mav.addObject("evlist", ekadashiVratservice.get());
+		mav.addObject("ageGroupList", ageservice.getAllName());
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("personList", service.findAll());
@@ -92,6 +98,7 @@ public class PersonController {
 		mav.addObject("evlist", ekadashiVratservice.get());
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
+		mav.addObject("ageGroupList", ageservice.getAllName());
 		mav.addObject("person", new Person());
 		mav.addObject("personList", service.findAll());
 	    mav.addObject("message", "Successfully Delete");
@@ -109,6 +116,7 @@ public class PersonController {
 		mav.addObject("evlist", ekadashiVratservice.get());
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
+		mav.addObject("ageGroupList", ageservice.getAllName());
 		mav.addObject("person", person);
 		mav.addObject("personList", service.findAll());
 		return mav;

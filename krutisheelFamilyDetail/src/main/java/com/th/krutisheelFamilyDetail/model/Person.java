@@ -61,6 +61,9 @@ public class Person {
 	private Date dateOfBirth;
 	
     private String contect_number;
+    
+    @ManyToOne
+    private AgeGroup age_group;
 	
 	private String contect_number_2;
 	
@@ -68,6 +71,72 @@ public class Person {
 	
 	private String note;
 	
+	public AgeGroup getAge_group() {
+		return age_group;
+	}
+
+	public Person(int id, String form_person_first_name, String form_person_middle_name, String form_person_last_name,
+			String form_person_full_name, String first_name, String middle_name, String full_name, String relation,
+			String gender, String education, String kshetradhar_name, String business, String business_time,
+			String res_no, Society society, int form_number, int resident_vibhag, Date dateOfBirth,
+			String contect_number, AgeGroup age_group, String contect_number_2, String form_person_note, String note,
+			Date dateOfMarriage, String karya_active, int since_karya, Javabadari karya_javabadari, String bhavapheri,
+			KaryVibhag karya_vibhag, Exam last_exam, String trikal_sandhya, String pratah_prathana,
+			String sayam_prathana, String pravachan, EkadashiVrati ekadashi, EkadashiVrati vrati, Prayog prayog,
+			int pujari_tarikh, int mnsgd_bhaktipheri, int other_bhaktipheri, int parprant_bhaktipheri, int tirthayatra,
+			String karya_note, String kendra) {
+		super();
+		this.id = id;
+		this.form_person_first_name = form_person_first_name;
+		this.form_person_middle_name = form_person_middle_name;
+		this.form_person_last_name = form_person_last_name;
+		this.form_person_full_name = form_person_full_name;
+		this.first_name = first_name;
+		this.middle_name = middle_name;
+		this.full_name = full_name;
+		this.relation = relation;
+		this.gender = gender;
+		this.education = education;
+		this.kshetradhar_name = kshetradhar_name;
+		this.business = business;
+		this.business_time = business_time;
+		this.res_no = res_no;
+		this.society = society;
+		this.form_number = form_number;
+		this.resident_vibhag = resident_vibhag;
+		this.dateOfBirth = dateOfBirth;
+		this.contect_number = contect_number;
+		this.age_group = age_group;
+		this.contect_number_2 = contect_number_2;
+		this.form_person_note = form_person_note;
+		this.note = note;
+		this.dateOfMarriage = dateOfMarriage;
+		this.karya_active = karya_active;
+		this.since_karya = since_karya;
+		this.karya_javabadari = karya_javabadari;
+		this.bhavapheri = bhavapheri;
+		this.karya_vibhag = karya_vibhag;
+		this.last_exam = last_exam;
+		this.trikal_sandhya = trikal_sandhya;
+		this.pratah_prathana = pratah_prathana;
+		this.sayam_prathana = sayam_prathana;
+		this.pravachan = pravachan;
+		this.ekadashi = ekadashi;
+		this.vrati = vrati;
+		this.prayog = prayog;
+		this.pujari_tarikh = pujari_tarikh;
+		this.mnsgd_bhaktipheri = mnsgd_bhaktipheri;
+		this.other_bhaktipheri = other_bhaktipheri;
+		this.parprant_bhaktipheri = parprant_bhaktipheri;
+		this.tirthayatra = tirthayatra;
+		this.karya_note = karya_note;
+		this.kendra = kendra;
+	}
+
+	public void setAge_group(AgeGroup age_group) {
+		this.age_group = age_group;
+	}
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date dateOfMarriage;
