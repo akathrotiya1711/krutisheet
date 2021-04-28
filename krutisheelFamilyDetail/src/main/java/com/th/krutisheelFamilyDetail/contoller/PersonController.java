@@ -9,16 +9,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.th.krutisheelFamilyDetail.model.Kshetradhar;
 import com.th.krutisheelFamilyDetail.model.Person;
 import com.th.krutisheelFamilyDetail.service.AgeGroupService;
+import com.th.krutisheelFamilyDetail.service.BusinessService;
+import com.th.krutisheelFamilyDetail.service.EducationService;
 import com.th.krutisheelFamilyDetail.service.EkadashiVratiService;
 import com.th.krutisheelFamilyDetail.service.ExamService;
 import com.th.krutisheelFamilyDetail.service.JavabadariService;
 import com.th.krutisheelFamilyDetail.service.KaryVibhagService;
+import com.th.krutisheelFamilyDetail.service.KendraService;
+import com.th.krutisheelFamilyDetail.service.KshtradharService;
 import com.th.krutisheelFamilyDetail.service.PersonService;
 import com.th.krutisheelFamilyDetail.service.PrayogService;
 import com.th.krutisheelFamilyDetail.service.RelationService;
 import com.th.krutisheelFamilyDetail.service.SocietyService;
+import com.th.krutisheelFamilyDetail.service.VibhagService;
 
 @RestController
 @RequestMapping("/person")
@@ -28,6 +34,9 @@ public class PersonController {
 	private PersonService service;
 	
 	@Autowired
+	private VibhagService vibhagservice;
+	
+	@Autowired
 	private SocietyService society;
 	
 	@Autowired
@@ -35,6 +44,9 @@ public class PersonController {
 
 	@Autowired
 	private ExamService exam;
+	
+	@Autowired
+	private KendraService kendraservice;
 	
 	@Autowired
 	private KaryVibhagService karyVibhagService;
@@ -51,6 +63,15 @@ public class PersonController {
 	@Autowired
 	private AgeGroupService ageservice;
 	
+	@Autowired
+	private EducationService educationservice;
+	
+	@Autowired
+	private BusinessService businessservice;
+	
+	@Autowired
+	private KshtradharService kshetradharservice;
+	
 	@GetMapping("/")
 	public ModelAndView newPerson() {
 		ModelAndView mav = new ModelAndView("person");
@@ -62,6 +83,11 @@ public class PersonController {
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("ageGroupList", ageservice.getAllName());
+		mav.addObject("educationList", educationservice.getAllName());
+		mav.addObject("businessList", businessservice.getAllName());
+		mav.addObject("vibhagList", vibhagservice.findAllVibhags());
+		mav.addObject("kshetradharList", kshetradharservice.getAllName());
+		mav.addObject("kendraList", kendraservice.getAllKendrName());
 		mav.addObject("person", new Person());
 		mav.addObject("personList", service.findAll());
 		return mav;
@@ -69,8 +95,15 @@ public class PersonController {
 	
 	@PostMapping("/")
 	public ModelAndView savePerson(@ModelAttribute Person p) {
-		p.setForm_person_full_name(p.getForm_person_first_name(), p.getForm_person_middle_name(), p.getForm_person_last_name());
-		p.setFull_name(p.getFirst_name(), p.getMiddle_name(), p.getForm_person_last_name());
+		String hofFullName = p.getHof_firstName() + " " + p.getHof_middleName() + " " + p.getHof_lastName();
+		p.setHof_fullName(hofFullName);
+		String fullName  = p.getFirst_name() + " "+ p.getMiddle_name()  +" " + p.getHof_lastName();
+		p.setFull_name(fullName);
+		
+		if(fullName != "" && p.getIsKrutisheel() != null && p.getIsKrutisheel().equalsIgnoreCase("yes")) {
+			Kshetradhar krutisheel = new Kshetradhar(fullName);
+			kshetradharservice.save(krutisheel);
+		}
 		service.savePerson(p);
 		ModelAndView mav = new ModelAndView("person");
 		mav.addObject("person", new Person());
@@ -80,8 +113,11 @@ public class PersonController {
 		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
 		mav.addObject("evlist", ekadashiVratservice.get());
 		mav.addObject("ageGroupList", ageservice.getAllName());
+		mav.addObject("educationList", educationservice.getAllName());
+		mav.addObject("businessList", businessservice.getAllName());
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
+		mav.addObject("kshetradharList", kshetradharservice.getAllName());
 		mav.addObject("personList", service.findAll());
 		mav.addObject("message", "Added Successfully");
 		return mav;
@@ -99,6 +135,9 @@ public class PersonController {
 		mav.addObject("javabadariList", javabadariService.findAll());
 		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("ageGroupList", ageservice.getAllName());
+		mav.addObject("educationList", educationservice.getAllName());
+		mav.addObject("businessList", businessservice.getAllName());
+		mav.addObject("kshetradharList", kshetradharservice.getAllName());
 		mav.addObject("person", new Person());
 		mav.addObject("personList", service.findAll());
 	    mav.addObject("message", "Successfully Delete");
@@ -115,6 +154,8 @@ public class PersonController {
 		mav.addObject("karyaVibhagList",karyVibhagService.findAll());
 		mav.addObject("evlist", ekadashiVratservice.get());
 		mav.addObject("javabadariList", javabadariService.findAll());
+		mav.addObject("educationList", educationservice.getAllName());
+		mav.addObject("businessList", businessservice.getAllName());
 		mav.addObject("prayogList", prayogservice.getPrayog());
 		mav.addObject("ageGroupList", ageservice.getAllName());
 		mav.addObject("person", person);

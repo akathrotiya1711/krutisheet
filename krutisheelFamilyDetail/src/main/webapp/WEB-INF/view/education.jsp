@@ -14,16 +14,16 @@
     <div class="col"></div>
     <div class="col">
     	<p class= "h3 text-center">
-    	<c:if test="${vibhag.id==0}">  
-   			Add Vibhag  
+    	<c:if test="${education.id==0}">  
+   			Add Education Name  
 		</c:if> 
-		<c:if test="${vibhag.id>0}">
-			Update Vibhag  
+		<c:if test="${education.id>0}">
+			Update Education Name
 		</c:if>
     	</div>
     <div class="col">
-    	<c:if test="${vibhag.id>0}">
-    		<button type="button" class="btn btn-link"><a href="/vibhag/"> New Vibhag</a></button>
+    	<c:if test="${education.id>0}">
+    		<button type="button" class="btn btn-link"><a href="/education/"> New Education Name</a></button>
     	</c:if> 
    	</div>
   </div>
@@ -31,11 +31,11 @@
 
 
 
-<form:form  id ="vibhag" method="POST" modelAttribute="vibhag" action="/vibhag/" name="vibhag" class="text-center border border-light p-5">
+<form:form  id ="education" method="POST" modelAttribute="education" action="/education/" name="education" class="text-center border border-light p-5">
      
      <div class = "row">
       <div class="col">
-     <form:input path="name" id="name"  placeholder = "Vibhag Name" />
+     <form:input path="name" id="name"  placeholder = "Education Name" />
            </div>
            </div>
            
@@ -50,27 +50,27 @@
 </form:form>
 
 
-
-<h3 align ="center">Vibhag List</h3>
+<%! int count = 1; %>
+<h3 align ="center">Education List</h3>
 <div class="row col-md-6"><!-- you can use column classes md-3,md-5 as per your table width -->
 
 <div class="table-responsive">
 <table class = "text-center table table-hover table-sm w-auto text-center" id= "table1">
 	<thead>
 	<tr>
- 		<th scope = "col">Id</th>
+ 		<th scope = "col">#</th>
  		<th scope = "col">Name</th>
  		<th scope = "col">Edit</th>
  		<th scope = "col">Delete</th>
  	</thead>
  
  
-<c:forEach var="vibhag" items="${vibhagList}">   
+<c:forEach var="education" items="${educationList}">   
    <tr>  
-  <th scope="row" class="align-middle">  ${vibhag.id}</th>
-   <td class="align-middle">${vibhag.name}</td>
-   <td><button type="button" class="btn btn-link"><a href = "/vibhag/${vibhag.id}">Edit</a></button></td>
-   <td><button type="button" class="btn btn-link"><a href = "/vibhag/delete/${vibhag.id}">Delete</a></button></td>  
+  <th scope="row" class="align-middle">  <%= count++ %></th>
+   <td class="align-middle">${education.name}</td>
+   <td><button type="button" class="btn btn-link"><a href = "/education/${education.id}">Edit</a></button></td>
+   <td><button type="button" class="btn btn-link"><a href = "/education/delete/${education.id}">Delete</a></button></td>  
    </tr>
    </c:forEach>
  </table>
